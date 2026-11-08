@@ -1030,7 +1030,7 @@ app.get("/robots.txt", (_req, res) => {
   const filePath = path.join(ROOT, "robots.txt");
   res.type("text/plain");
   if (fs.existsSync(filePath)) return res.sendFile(filePath);
-  res.send("User-agent: *\nAllow: /\n\nSitemap: https://rifmary.onrender.com/sitemap.xml\n");
+  res.send("User-agent: *\nDisallow:\n\nUser-agent: Googlebot\nAllow: /\n\nSitemap: https://rifmary.onrender.com/sitemap.xml\n");
 });
 
 app.get("/sitemap.xml", (_req, res) => {
