@@ -1026,6 +1026,14 @@ app.get("/googlea176a3127a751794.html", (_req, res) => {
   res.type("text/html").send("google-site-verification: googlea176a3127a751794.html");
 });
 
+app.get("/robots.txt", (_req, res) => {
+  res.type("text/plain").sendFile(path.join(ROOT, "robots.txt"));
+});
+
+app.get("/sitemap.xml", (_req, res) => {
+  res.type("application/xml").sendFile(path.join(ROOT, "sitemap.xml"));
+});
+
 app.use(express.static(ROOT));
 
 app.listen(PORT, "0.0.0.0", () => {
