@@ -1026,6 +1026,12 @@ app.get("/googlea176a3127a751794.html", (_req, res) => {
   res.type("text/html").send("google-site-verification: googlea176a3127a751794.html");
 });
 
+app.get("/googlebb4ec8c8e133c6c5.html", (_req, res) => {
+  const filePath = path.join(ROOT, "googlebb4ec8c8e133c6c5.html");
+  if (fs.existsSync(filePath)) return res.sendFile(filePath);
+  res.type("text/html").send("google-site-verification: googlebb4ec8c8e133c6c5.html");
+});
+
 app.get("/robots.txt", (_req, res) => {
   const filePath = path.join(ROOT, "robots.txt");
   res.type("text/plain");
