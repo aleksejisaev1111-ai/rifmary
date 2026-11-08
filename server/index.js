@@ -1027,11 +1027,24 @@ app.get("/googlea176a3127a751794.html", (_req, res) => {
 });
 
 app.get("/robots.txt", (_req, res) => {
-  res.type("text/plain").sendFile(path.join(ROOT, "robots.txt"));
+  const filePath = path.join(ROOT, "robots.txt");
+  res.type("text/plain");
+  if (fs.existsSync(filePath)) return res.sendFile(filePath);
+  res.send("User-agent: *\nAllow: /\n\nSitemap: https://rifmary.onrender.com/sitemap.xml\n");
 });
 
 app.get("/sitemap.xml", (_req, res) => {
-  res.type("application/xml").sendFile(path.join(ROOT, "sitemap.xml"));
+  const filePath = path.join(ROOT, "sitemap.xml");
+  res.type("application/xml");
+  if (fs.existsSync(filePath)) return res.sendFile(filePath);
+  res.send(`<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://rifmary.onrender.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://rifmary.onrender.com/contest.html</loc><priority>0.9</priority></url>
+  <url><loc>https://rifmary.onrender.com/ideas.html</loc><priority>0.7</priority></url>
+  <url><loc>https://rifmary.onrender.com/support.html</loc><priority>0.5</priority></url>
+  <url><loc>https://rifmary.onrender.com/profile.html</loc><priority>0.6</priority></url>
+</urlset>`);
 });
 
 app.use(express.static(ROOT));
