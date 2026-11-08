@@ -1020,6 +1020,12 @@ app.post("/api/suggestions", (req, res) => {
   res.json({ suggestion: item, message: "Спасибо! Идея отправлена." });
 });
 
+app.get("/googlea176a3127a751794.html", (_req, res) => {
+  const filePath = path.join(ROOT, "googlea176a3127a751794.html");
+  if (fs.existsSync(filePath)) return res.sendFile(filePath);
+  res.type("text/html").send("google-site-verification: googlea176a3127a751794.html");
+});
+
 app.use(express.static(ROOT));
 
 app.listen(PORT, "0.0.0.0", () => {
