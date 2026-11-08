@@ -1,0 +1,44 @@
+# dependencies
+node_modules/
+server/node_modules/
+
+# local/runtime
+server/data/
+.env
+.env.*
+*.log
+
+# unrelated projects in this workspace
+messenger/
+BeatRush/
+runo-android/
+tools/
+public/
+.cursor/
+cursor/
+cursor.zip
+chp-anapa/
+forge-1.20.1/
+minecraft-mods/
+minecraft-server/
+play/
+play.zip
+data/
+refs/
+PrankApp.cs
+prank*
+build-exe.bat
+build_dictionary.py
+dictionary.js
+extra-words.txt
+firebase-config.js
+tradjan.exe
+words-500k.*
+words-50k.*
+words-full.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

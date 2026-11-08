@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Рифмарий — литературные рифмы к словам</title>
+  <meta name="description" content="Подберите точные, богатые и ассонансные литературные рифмы к любому русскому слову. Пишите стихи и соревнуйтесь с другими авторами." />
+  <meta name="keywords" content="рифмы, подобрать рифму, рифмовник, стихи, поэзия, генератор рифм" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:title" content="Рифмарий — литературные рифмы к словам" />
+  <meta property="og:description" content="Рифмы из полного словаря + страница стихов для соревнования авторов." />
+  <meta property="og:url" content="https://rifmary.surge.sh/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://rifmary.surge.sh/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="auth.css?v=2" />
+</head>
+<body>
+  <div class="bg-layer" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="grain"></div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Рифмарий — на главную">
+      <span class="brand-mark" aria-hidden="true">◇</span>
+      <span class="brand-name">Рифмарий</span>
+    </a>
+    <nav class="top-nav" aria-label="Разделы">
+      <button type="button" class="nav-pill" data-go="contest.html">Стихи</button>
+      <button type="button" class="nav-pill" data-go="#text-helper">В тексте</button>
+      <button type="button" class="nav-pill" data-go="ideas.html">Идеи</button>
+      <button type="button" class="nav-pill" data-go="support.html">Поддержка</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="brand-hero">Рифмарий</p>
+      <h1>Литературные рифмы<br />к вашему слову</h1>
+      <p class="lede">Введите слово — получите точные, богатые и ассонансные созвучия из полного словаря русского языка.</p>
+
+      <form class="search" id="rhyme-form" autocomplete="off" action="javascript:void(0)">
+        <label class="sr-only" for="word-input">Слово для рифмы</label>
+        <input
+          id="word-input"
+          name="word"
+          type="text"
+          inputmode="text"
+          placeholder="Например: ночь, любовь, ветер…"
+          maxlength="40"
+          required
+        />
+        <button type="submit" id="search-btn" disabled>Загрузка…</button>
+      </form>
+    </section>
+
+    <section class="results" id="results" hidden aria-live="polite"></section>
+
+    <section class="text-helper" id="text-helper">
+      <h2>Рифмы в тексте</h2>
+      <p class="section-lede">Вставьте строки стиха — отметим слабые окончания и предложим созвучия к последнему слову каждой строки.</p>
+      <form id="text-rhyme-form" class="text-rhyme-form">
+        <label class="sr-only" for="text-rhyme-input">Текст стиха</label>
+        <textarea id="text-rhyme-input" rows="8" placeholder="Вставьте сюда строки…&#10;Например:&#10;В саду шумит ночная тишина&#10;И падает на крыши тишина"></textarea>
+        <div class="text-rhyme-bar">
+          <p class="muted" id="text-rhyme-meta">Бесплатно — до 4 строк, Premium без лимита.</p>
+          <button type="submit">Разобрать</button>
+        </div>
+      </form>
+      <div id="text-rhyme-results" class="text-rhyme-results" hidden></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><span class="brand-name">Рифмарий</span> — настольный помощник для стиха.</p>
+    <p class="muted" id="dict-meta">Загрузка словаря…</p>
+    <p class="muted"><a href="support.html">Поддержка</a> · <a href="ideas.html">Предложка улучшений</a></p>
+  </footer>
+
+  <script src="auth.js?v=5"></script>
+  <script src="words-full.js"></script>
+  <script src="rhyme.js?v=4"></script>
+  <script src="app.js?v=6"></script>
+</body>
+</html>

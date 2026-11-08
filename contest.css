@@ -1,0 +1,520 @@
+/* Навигация наследует стили из styles.css (.nav-link) */
+
+.arena-hero {
+  min-height: calc(100vh - 5.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 0 3.5rem;
+  animation: rise 0.9s ease both;
+}
+
+.arena-brand {
+  background: linear-gradient(120deg, #e7eef5 20%, #d4a574 70%, #9bb7e8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.arena-hero h1 {
+  margin: 0;
+  max-width: 12ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3.4vw, 2.45rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.2;
+  color: var(--muted);
+}
+
+.arena-hero .lede strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.arena-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.btn-primary,
+.btn-ghost,
+.poem-form button,
+.vote-btn {
+  border-radius: 999px;
+  font: 700 0.95rem/1 var(--font-ui);
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.btn-primary,
+.poem-form button {
+  border: 0;
+  padding: 0.9rem 1.4rem;
+  background: linear-gradient(135deg, #e0b886, #c9925a);
+  color: #1a120b;
+  text-decoration: none;
+}
+
+.btn-primary:hover,
+.poem-form button:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  border: 1px solid var(--line);
+  padding: 0.85rem 1.25rem;
+  background: transparent;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.btn-ghost:hover {
+  border-color: rgba(212, 165, 116, 0.45);
+  color: var(--text);
+  background: var(--accent-soft);
+}
+
+.arena-meta {
+  margin: 1.25rem 0 0;
+  color: var(--faint);
+  font-size: 0.9rem;
+}
+
+.arena-submit,
+.arena-board,
+.arena-seasons,
+.arena-feed {
+  padding: 3.5rem 0 1rem;
+  border-top: 1px solid rgba(212, 165, 116, 0.18);
+}
+
+.arena-submit h2,
+.arena-board h2,
+.arena-seasons h2,
+.arena-feed h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.arena-search {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin: 1.1rem 0 1.25rem;
+}
+
+.arena-search input {
+  flex: 1;
+  min-width: 220px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  padding: 0.8rem 1rem;
+  outline: none;
+}
+
+.arena-search button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.8rem 1.2rem;
+  background: linear-gradient(135deg, #e0b886, #c9925a);
+  color: #1a120b;
+  font: 700 0.9rem/1 var(--font-ui);
+  cursor: pointer;
+}
+
+.poem-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.7rem;
+}
+
+.mod-btn {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  padding: 0.35rem 0.75rem;
+  font: 600 0.78rem/1 var(--font-ui);
+  cursor: pointer;
+}
+
+.mod-btn:hover {
+  color: var(--text);
+  border-color: rgba(212, 165, 116, 0.45);
+}
+
+.seasons-archive {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.25rem;
+}
+
+.season-chip {
+  display: grid;
+  gap: 0.25rem;
+  text-align: left;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  cursor: pointer;
+  min-width: min(100%, 220px);
+}
+
+.season-chip span {
+  color: var(--faint);
+  font-size: 0.82rem;
+}
+
+.season-chip.is-active {
+  border-color: rgba(212, 165, 116, 0.45);
+}
+
+.season-chip.is-selected {
+  background: var(--accent-soft);
+  border-color: rgba(212, 165, 116, 0.55);
+}
+
+.poem-author {
+  margin: 0.2rem 0 0;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.poem-author:hover {
+  text-decoration: underline;
+}
+
+.poem-season {
+  margin: 0.2rem 0 0;
+  color: var(--faint);
+  font-size: 0.8rem;
+}
+
+.comment-toggle {
+  margin-top: 0.75rem;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0;
+  font: 600 0.88rem/1.2 var(--font-ui);
+}
+
+.comment-toggle:hover {
+  color: var(--text);
+}
+
+.comments-box {
+  margin-top: 0.75rem;
+}
+
+.comment-list {
+  list-style: none;
+  margin: 0.7rem 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.comment-item strong {
+  display: block;
+  font-size: 0.85rem;
+}
+
+.comment-item p {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.comment-form {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.comment-form input {
+  flex: 1;
+  min-width: 180px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  padding: 0.65rem 0.95rem;
+  outline: none;
+}
+
+.comment-form button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+  background: linear-gradient(135deg, #e0b886, #c9925a);
+  color: #1a120b;
+  font: 700 0.85rem/1 var(--font-ui);
+  cursor: pointer;
+}
+
+.section-lede {
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  max-width: 34rem;
+}
+
+.poem-form {
+  margin-top: 1.75rem;
+  max-width: 760px;
+}
+
+.field-row {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.poem-form label {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.poem-form label span {
+  color: var(--faint);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.poem-form input,
+.poem-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  padding: 0.9rem 1rem;
+  font: 500 1rem/1.45 var(--font-ui);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.poem-form textarea {
+  resize: vertical;
+  min-height: 180px;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  line-height: 1.55;
+}
+
+.poem-form input:focus,
+.poem-form textarea:focus {
+  border-color: rgba(212, 165, 116, 0.45);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.agree-check {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin-top: 1.1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.agree-check input {
+  width: auto;
+  margin-top: 0.25rem;
+  flex: 0 0 auto;
+  accent-color: #c9925a;
+}
+
+.form-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.char-count {
+  margin: 0;
+  color: var(--faint);
+  font-size: 0.88rem;
+}
+
+.form-status {
+  min-height: 1.4em;
+  margin: 0.85rem 0 0;
+  color: var(--exact);
+  font-size: 0.92rem;
+}
+
+.form-status.is-error {
+  color: var(--danger);
+}
+
+.board-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.board-filters {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.filter-btn {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  padding: 0.45rem 0.85rem;
+  font: 600 0.85rem/1.2 var(--font-ui);
+  cursor: pointer;
+}
+
+.filter-btn.is-active,
+.filter-btn:hover {
+  border-color: rgba(212, 165, 116, 0.45);
+  color: var(--text);
+  background: var(--accent-soft);
+}
+
+.poem-board {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.poem-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem 1.25rem;
+  padding: 1.4rem 0;
+  border-top: 1px solid var(--line);
+  animation: rise 0.45s ease both;
+}
+
+.poem-rank {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 1;
+  min-width: 2.2rem;
+}
+
+.poem-rank.is-top {
+  background: linear-gradient(135deg, #e0b886, #9bb7e8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.poem-body h3 {
+  margin: 0 0 0.2rem;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+
+.poem-author {
+  margin: 0 0 0.85rem;
+  color: var(--faint);
+  font-size: 0.9rem;
+}
+
+.poem-text {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.poem-vote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 4.5rem;
+}
+
+.vote-btn {
+  border: 1px solid rgba(212, 165, 116, 0.35);
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 0.7rem 0.9rem;
+  min-width: 4.2rem;
+}
+
+.vote-btn:hover:not(:disabled) {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.vote-btn:disabled,
+.vote-btn.is-voted {
+  opacity: 0.7;
+  cursor: default;
+  transform: none;
+}
+
+.vote-count {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.board-empty {
+  padding: 2rem 0;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+@media (min-width: 720px) {
+  .field-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    flex-wrap: wrap;
+  }
+
+  .poem-row {
+    grid-template-columns: auto 1fr;
+  }
+
+  .poem-vote {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .arena-hero {
+    min-height: auto;
+    padding-top: 2.2rem;
+  }
+}

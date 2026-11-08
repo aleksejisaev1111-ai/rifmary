@@ -1,0 +1,249 @@
+.support-main {
+  padding-bottom: 3.5rem;
+}
+
+.support-hero {
+  padding: 2rem 0 1.4rem;
+  animation: rise 0.7s ease both;
+}
+
+.support-hero h1 {
+  margin: 0.2rem 0 0.6rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.3rem);
+  font-weight: 600;
+}
+
+.support-hero a,
+.site-footer a {
+  color: var(--accent);
+}
+
+.support-panel,
+.chat-card,
+.inbox-card {
+  border: 1px solid rgba(212, 165, 116, 0.22);
+  border-radius: 24px;
+  background:
+    radial-gradient(520px 240px at 8% 0%, rgba(212, 165, 116, 0.1), transparent 55%),
+    linear-gradient(165deg, rgba(18, 24, 33, 0.92), rgba(13, 19, 27, 0.95));
+  box-shadow: var(--shadow);
+  padding: 1.3rem 1.25rem 1.45rem;
+}
+
+.support-layout {
+  display: grid;
+  gap: 1rem;
+}
+
+.support-layout.is-admin {
+  grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.4fr);
+}
+
+.chat-card h2,
+.inbox-card h2,
+.support-panel h2 {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.chat-log {
+  min-height: 280px;
+  max-height: 420px;
+  overflow: auto;
+  display: grid;
+  gap: 0.7rem;
+  padding: 0.2rem 0.1rem 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 0.9rem;
+}
+
+.chat-bubble {
+  max-width: 85%;
+  border-radius: 16px;
+  padding: 0.75rem 0.9rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.chat-bubble.is-mine {
+  justify-self: end;
+  background: rgba(212, 165, 116, 0.14);
+  border-color: rgba(212, 165, 116, 0.28);
+}
+
+.chat-bubble.is-admin {
+  justify-self: start;
+}
+
+.chat-bubble strong {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--faint);
+  margin-bottom: 0.25rem;
+}
+
+.chat-bubble p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.chat-form {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.chat-form textarea,
+.idea-form input,
+.idea-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  padding: 0.85rem 1rem;
+  font: 500 1rem/1.45 var(--font-ui);
+  outline: none;
+  resize: vertical;
+}
+
+.chat-form button,
+.idea-form-bar .btn-primary,
+.profile-actions .btn-primary,
+.profile-actions .btn-ghost {
+  border-radius: 999px;
+  font: 700 0.95rem/1 var(--font-ui);
+  cursor: pointer;
+}
+
+.chat-form button,
+.idea-form-bar .btn-primary,
+.profile-actions .btn-primary {
+  border: 0;
+  padding: 0.85rem 1.25rem;
+  background: linear-gradient(135deg, #e0b886, #c9925a);
+  color: #1a120b;
+  justify-self: start;
+}
+
+.profile-actions .btn-ghost {
+  border: 1px solid var(--line);
+  padding: 0.8rem 1.15rem;
+  background: transparent;
+  color: var(--muted);
+}
+
+.profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.form-status {
+  margin: 0.35rem 0 0;
+  min-height: 1.2em;
+  color: var(--exact);
+  font-size: 0.88rem;
+}
+
+.form-status.is-error {
+  color: var(--danger);
+}
+
+.inbox-list,
+.ideas-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.inbox-item {
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  padding: 0.75rem 0.85rem;
+  cursor: pointer;
+}
+
+.inbox-item.is-active,
+.inbox-item:hover {
+  border-color: rgba(212, 165, 116, 0.45);
+  background: var(--accent-soft);
+}
+
+.inbox-item strong {
+  display: block;
+}
+
+.inbox-item span {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.inbox-item.is-unread strong::after {
+  content: " · новое";
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.idea-form {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.idea-form label {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.idea-form label span {
+  color: var(--faint);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.idea-form-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.ideas-list li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.75rem 0.1rem;
+}
+
+.ideas-list h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.ideas-list p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  white-space: pre-wrap;
+}
+
+.chat-empty {
+  color: var(--muted);
+  padding: 0.5rem 0;
+}
+
+@media (max-width: 860px) {
+  .support-layout.is-admin {
+    grid-template-columns: 1fr;
+  }
+}

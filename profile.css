@@ -1,0 +1,300 @@
+.profile-main {
+  padding-bottom: 4rem;
+}
+
+.profile-hero {
+  padding: 2rem 0 1.5rem;
+  animation: rise 0.7s ease both;
+}
+
+.profile-hero h1 {
+  margin: 0.2rem 0 0.6rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.profile-panel {
+  border: 1px solid rgba(212, 165, 116, 0.22);
+  border-radius: 24px;
+  background:
+    radial-gradient(520px 240px at 8% 0%, rgba(212, 165, 116, 0.1), transparent 55%),
+    linear-gradient(165deg, rgba(18, 24, 33, 0.92), rgba(13, 19, 27, 0.95));
+  box-shadow: var(--shadow);
+  padding: 1.4rem 1.35rem 1.6rem;
+  animation: rise 0.8s ease both;
+}
+
+.profile-empty {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+.profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.btn-primary,
+.btn-ghost,
+.profile-form button {
+  border-radius: 999px;
+  font: 700 0.95rem/1 var(--font-ui);
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.btn-primary,
+.profile-form button {
+  border: 0;
+  padding: 0.9rem 1.35rem;
+  background: linear-gradient(135deg, #e0b886, #c9925a);
+  color: #1a120b;
+}
+
+.btn-primary:hover,
+.profile-form button:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  border: 1px solid var(--line);
+  padding: 0.85rem 1.2rem;
+  background: transparent;
+  color: var(--muted);
+}
+
+.btn-ghost:hover {
+  border-color: rgba(212, 165, 116, 0.45);
+  color: var(--text);
+  background: var(--accent-soft);
+}
+
+.profile-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.9rem 1rem;
+  margin-bottom: 1.35rem;
+}
+
+.profile-form label {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.profile-form label span {
+  color: var(--faint);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.profile-form input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  padding: 0.8rem 0.95rem;
+  font: 500 1rem/1.3 var(--font-ui);
+  outline: none;
+}
+
+.profile-form input:focus {
+  border-color: rgba(212, 165, 116, 0.45);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.profile-form-bar {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.form-status {
+  margin: 0;
+  min-height: 1.2em;
+  color: var(--exact);
+  font-size: 0.88rem;
+}
+
+.form-status.is-error {
+  color: var(--danger);
+}
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 1.6rem;
+}
+
+.stat-tile {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 1rem 1.05rem 1.05rem;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.stat-label {
+  margin: 0;
+  color: var(--faint);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  margin: 0.45rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.stat-note {
+  margin: 0.45rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.profile-premium,
+.profile-favorites,
+.profile-poems {
+  margin-top: 1.6rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.profile-premium h2,
+.profile-favorites h2,
+.profile-poems h2 {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.profile-poems-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.profile-poems-head h2 {
+  margin: 0;
+}
+
+.profile-head-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.1rem;
+}
+
+.mod-note {
+  margin: 0.85rem 0 0;
+  color: var(--danger);
+  font-size: 0.92rem;
+}
+
+.profile-warnings {
+  margin-top: 1.2rem;
+}
+
+.profile-warnings h2 {
+  margin: 0 0 0.7rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.author-poem-side {
+  display: grid;
+  gap: 0.45rem;
+  justify-items: end;
+}
+
+.profile-poem-list,
+.profile-fav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.profile-poem-list li,
+.profile-fav-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.7rem 0.1rem;
+}
+
+.poem-text-preview {
+  white-space: pre-wrap;
+}
+
+.profile-poem-list h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.profile-poem-list p {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.poem-votes {
+  color: var(--accent);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.board-empty {
+  color: var(--muted);
+  padding: 0.4rem 0;
+}
+
+.auth-user {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.auth-user:hover,
+.auth-user:focus-visible,
+.auth-user.is-current {
+  color: var(--text);
+  border-bottom-color: rgba(212, 165, 116, 0.55);
+}
+
+@media (max-width: 720px) {
+  .profile-form {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-stats {
+    grid-template-columns: 1fr;
+  }
+}

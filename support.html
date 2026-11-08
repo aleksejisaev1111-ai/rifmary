@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Поддержка — Рифмарий</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="auth.css?v=2" />
+  <link rel="stylesheet" href="support.css?v=1" />
+</head>
+<body>
+  <div class="bg-layer" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="grain"></div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Рифмарий — на главную">
+      <span class="brand-mark" aria-hidden="true">◇</span>
+      <span class="brand-name">Рифмарий</span>
+    </a>
+    <nav class="top-nav" aria-label="Разделы">
+      <button type="button" class="nav-pill" data-go="index.html">Рифмы</button>
+      <button type="button" class="nav-pill" data-go="contest.html">Стихи</button>
+      <button type="button" class="nav-pill" data-go="ideas.html">Идеи</button>
+      <button type="button" class="nav-pill is-current" data-go="support.html" aria-current="page">Поддержка</button>
+    </nav>
+  </header>
+
+  <main class="support-main">
+    <section class="support-hero">
+      <p class="brand-hero">Поддержка</p>
+      <h1>Чат с командой</h1>
+      <p class="lede">Напишите о проблеме или вопросе — сообщение придёт главному модератору. Есть идея по сайту? <a href="ideas.html">Откройте предложку</a>.</p>
+    </section>
+
+    <section class="support-panel" id="support-guest" hidden>
+      <p>Чтобы писать в поддержку, войдите в аккаунт.</p>
+      <div class="profile-actions">
+        <button type="button" class="btn-primary" id="support-login">Войти</button>
+        <button type="button" class="btn-ghost" id="support-register">Регистрация</button>
+      </div>
+    </section>
+
+    <section class="support-layout" id="support-user" hidden>
+      <div class="chat-card">
+        <h2>Ваш диалог</h2>
+        <div class="chat-log" id="user-chat-log"></div>
+        <form class="chat-form" id="user-chat-form">
+          <textarea id="user-chat-input" rows="3" maxlength="2000" placeholder="Опишите вопрос…" required></textarea>
+          <button type="submit">Отправить</button>
+        </form>
+        <p class="form-status" id="user-chat-status" role="status"></p>
+      </div>
+    </section>
+
+    <section class="support-layout is-admin" id="support-admin" hidden>
+      <aside class="inbox-card">
+        <h2>Входящие</h2>
+        <ul class="inbox-list" id="inbox-list"></ul>
+      </aside>
+      <div class="chat-card">
+        <h2 id="admin-chat-title">Выберите диалог</h2>
+        <div class="chat-log" id="admin-chat-log"></div>
+        <form class="chat-form" id="admin-chat-form" hidden>
+          <textarea id="admin-chat-input" rows="3" maxlength="2000" placeholder="Ответ пользователю…" required></textarea>
+          <button type="submit">Ответить</button>
+        </form>
+        <p class="form-status" id="admin-chat-status" role="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><span class="brand-name">Рифмарий</span> — настольный помощник для стиха.</p>
+    <p class="muted"><a href="ideas.html">Предложка по улучшению проекта</a></p>
+  </footer>
+
+  <script src="auth.js?v=5"></script>
+  <script src="support.js?v=1"></script>
+</body>
+</html>

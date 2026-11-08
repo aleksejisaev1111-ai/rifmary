@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Профиль — Рифмарий</title>
+  <meta name="description" content="Профиль автора на Рифмарии: псевдоним, стихи, рейтинг и возраст." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="auth.css?v=2" />
+  <link rel="stylesheet" href="profile.css?v=5" />
+</head>
+<body>
+  <div class="bg-layer" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="grain"></div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Рифмарий — на главную">
+      <span class="brand-mark" aria-hidden="true">◇</span>
+      <span class="brand-name">Рифмарий</span>
+    </a>
+    <nav class="top-nav" aria-label="Разделы">
+      <button type="button" class="nav-pill" data-go="index.html">Рифмы</button>
+      <button type="button" class="nav-pill" data-go="contest.html">Стихи</button>
+      <button type="button" class="nav-pill" data-go="ideas.html">Идеи</button>
+      <button type="button" class="nav-pill" data-go="support.html">Поддержка</button>
+    </nav>
+  </header>
+
+  <main id="top" class="profile-main">
+    <section class="profile-hero">
+      <p class="brand-hero">Профиль</p>
+      <h1 id="profile-title">Ваш профиль</h1>
+      <p class="lede" id="profile-lede">Псевдоним, стихи и место в рейтинге проекта.</p>
+    </section>
+
+    <section class="profile-panel" id="profile-guest" hidden>
+      <p class="profile-empty">Чтобы открыть профиль, войдите или зарегистрируйтесь.</p>
+      <div class="profile-actions">
+        <button type="button" class="btn-primary" id="profile-login">Войти</button>
+        <button type="button" class="btn-ghost" id="profile-register">Регистрация</button>
+      </div>
+    </section>
+
+    <section class="profile-panel" id="profile-body" hidden>
+      <form class="profile-form" id="profile-form">
+        <label>
+          <span>Псевдоним</span>
+          <input id="profile-name" name="displayName" type="text" maxlength="40" required />
+        </label>
+        <div class="profile-form-bar">
+          <button type="submit" id="profile-save">Сохранить</button>
+          <button type="button" class="btn-ghost" id="profile-logout">Выйти из аккаунта</button>
+          <p class="form-status" id="profile-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+
+      <div class="profile-stats" aria-label="Статистика">
+        <article class="stat-tile">
+          <p class="stat-label">Стихов</p>
+          <p class="stat-value" id="stat-poems">0</p>
+        </article>
+        <article class="stat-tile">
+          <p class="stat-label">Рейтинг</p>
+          <p class="stat-value" id="stat-rank">—</p>
+          <p class="stat-note" id="stat-votes">0 голосов</p>
+        </article>
+        <article class="stat-tile">
+          <p class="stat-label">Возраст</p>
+          <p class="stat-value" id="stat-age">—</p>
+        </article>
+      </div>
+
+      <div class="profile-premium" id="profile-premium">
+        <h2>Premium</h2>
+        <p class="section-lede" id="premium-status">Безлимит разбора текста и избранных рифм.</p>
+        <button type="button" class="btn-primary" id="premium-btn">Активировать Premium на 30 дней</button>
+        <p class="muted">Пока демо-активация без оплаты — подключим ЮKassa позже.</p>
+      </div>
+
+      <div class="profile-favorites">
+        <div class="profile-poems-head">
+          <h2>Избранные рифмы</h2>
+          <button type="button" class="btn-ghost" id="export-favorites">Скачать .txt</button>
+        </div>
+        <ul class="profile-fav-list" id="profile-fav-list"></ul>
+      </div>
+
+      <div class="profile-poems">
+        <div class="profile-poems-head">
+          <h2>Ваши стихи</h2>
+          <div class="profile-head-actions">
+            <button type="button" class="btn-ghost" id="export-poems">Скачать .txt</button>
+            <a class="btn-ghost" id="public-profile-link" href="#">Публичный профиль</a>
+          </div>
+        </div>
+        <ul class="profile-poem-list" id="profile-poem-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><span class="brand-name">Рифмарий</span> — настольный помощник для стиха.</p>
+  </footer>
+
+  <script src="auth.js?v=5"></script>
+  <script src="profile.js?v=6"></script>
+</body>
+</html>

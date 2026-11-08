@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Стихи — соревнование | Рифмарий</title>
+  <meta name="description" content="Соревнуйтесь в стихах: публикуйте тексты, голосуйте и поднимайтесь в рейтинге Рифмария." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:title" content="Стихи — соревнование | Рифмарий" />
+  <meta property="og:description" content="Публикуйте стихи, голосуйте и поднимайтесь в рейтинге." />
+  <meta property="og:url" content="https://rifmary.surge.sh/contest.html" />
+  <link rel="canonical" href="https://rifmary.surge.sh/contest.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="contest.css?v=8" />
+  <link rel="stylesheet" href="auth.css?v=2" />
+</head>
+<body>
+  <div class="bg-layer" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="grain"></div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Рифмарий — на главную">
+      <span class="brand-mark" aria-hidden="true">◇</span>
+      <span class="brand-name">Рифмарий</span>
+    </a>
+    <nav class="top-nav" aria-label="Разделы">
+      <button type="button" class="nav-pill" data-go="index.html">Рифмы</button>
+      <button type="button" class="nav-pill is-current" data-go="contest.html" aria-current="page">Стихи</button>
+      <button type="button" class="nav-pill" data-go="ideas.html">Идеи</button>
+      <button type="button" class="nav-pill" data-go="support.html">Поддержка</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="arena-hero">
+      <p class="brand-hero arena-brand">Стихи</p>
+      <h1>Соревнуйтесь<br />друг с другом</h1>
+      <p class="lede">Тема сезона: <strong id="contest-theme">Ночь и тишина</strong>. Опубликуйте стих, собирайте голоса, поднимайтесь в рейтинге.</p>
+      <div class="arena-actions">
+        <a class="btn-primary" href="#submit">Отправить стих</a>
+        <a class="btn-ghost" href="#board">Смотреть рейтинг</a>
+        <a class="btn-ghost" href="#feed">Лента подписок</a>
+      </div>
+      <p class="arena-meta" id="arena-meta">Загрузка…</p>
+    </section>
+
+    <section class="arena-submit" id="submit">
+      <h2>Ваш стих</h2>
+      <p class="section-lede">Нужна регистрация по email. Псевдоним, название и текст — до 5000 слов.</p>
+      <form class="poem-form" id="poem-form" autocomplete="off">
+        <div class="field-row">
+          <label>
+            <span>Псевдоним</span>
+            <input id="author-input" name="author" type="text" maxlength="40" placeholder="Например: Северный" required />
+          </label>
+          <label>
+            <span>Название</span>
+            <input id="title-input" name="title" type="text" maxlength="120" placeholder="Обязательно" required />
+          </label>
+        </div>
+        <label class="field-poem">
+          <span>Текст стиха</span>
+          <textarea id="poem-input" name="poem" rows="10" maxlength="40000" placeholder="Пишите здесь…" required></textarea>
+        </label>
+        <label class="agree-check">
+          <input id="agree-rules" name="agree" type="checkbox" required />
+          <span>Я соглашаюсь с правилами публикации: нельзя публиковать тексты про наркотики, суицид и самоповреждение, насилие, разжигание ненависти, порнографию и контент с участием несовершеннолетних. Нарушения могут быть скрыты и аккаунт заблокирован.</span>
+        </label>
+        <div class="form-bar">
+          <p class="char-count"><span id="char-count">0</span> / 5000 слов</p>
+          <button type="submit">Опубликовать</button>
+        </div>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="arena-seasons" id="seasons">
+      <h2>Темы сезонов</h2>
+      <p class="section-lede">Текущий конкурс и архив прошлых тем. Выберите тему, чтобы смотреть рейтинг сезона.</p>
+      <div class="seasons-archive" id="seasons-archive"></div>
+    </section>
+
+    <section class="arena-feed" id="feed">
+      <h2>Лента подписок</h2>
+      <p class="section-lede">Новые стихи авторов, на которых вы подписаны. Подписка — на странице автора.</p>
+      <ol class="poem-board" id="feed-board"></ol>
+    </section>
+
+    <section class="arena-board" id="board">
+      <div class="board-head">
+        <h2>Рейтинг</h2>
+        <div class="board-filters" role="group" aria-label="Сортировка">
+          <button type="button" class="filter-btn is-active" data-sort="votes">По голосам</button>
+          <button type="button" class="filter-btn" data-sort="new">Сначала новые</button>
+        </div>
+      </div>
+      <form class="arena-search" id="arena-search" autocomplete="off">
+        <label class="sr-only" for="arena-search-input">Поиск по авторам и стихам</label>
+        <input id="arena-search-input" type="search" placeholder="Поиск: автор, название или слова из стиха…" />
+        <button type="submit">Найти</button>
+      </form>
+      <ol class="poem-board" id="poem-board"></ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><span class="brand-name">Стихи Рифмария</span> — место для честного поэтического соревнования.</p>
+    <p class="muted">Аккаунты и стихи хранятся на сервере Рифмария. Один голос — на один стих в браузере.</p>
+  </footer>
+
+  <script src="auth.js?v=5"></script>
+  <script src="contest.js?v=12"></script>
+</body>
+</html>
